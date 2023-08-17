@@ -21,23 +21,26 @@ def calculate_result():
             buttonText("-i")
 
     except ValueError:
-        messagebox.showerror("Error", "Por favor, ingresa un valor numérico válido")
+        buttonText("Error")
 
 app = tk.Tk()
 app.title("Calculadora de Exponente de i")
+app.configure(bg="#F0F0F0")
 
-label_exponent = tk.Label(app, text="Ingrese el exponente")
-entry_exponent = tk.Entry(app)
-calculate_button = tk.Button(app, text="Calcular", command=calculate_result)
+label_exponent = tk.Label(app, text="Ingrese el exponente", bg="#F0F0F0", font=("Helvetica", 12))
+entry_exponent = tk.Entry(app, font=("Helvetica", 12), justify="center")
+calculate_button = tk.Button(app, text="Calcular", command=calculate_result, bg="#4CAF50", fg="white", font=("Helvetica", 12), relief="flat", borderwidth=2, padx=15, pady=5, cursor="hand2")
 
-label_exponent.grid(row=0, column=0, padx=10, pady=10, sticky="nsew")
+label_exponent.grid(row=2, column=0, padx=10, pady=10, sticky="nsew")
 entry_exponent.grid(row=1, column=0, padx=10, pady=10, sticky="nsew")
-calculate_button.grid(row=2, column=0, padx=10, pady=10, sticky="nsew")
+calculate_button.grid(row=0, column=0, padx=10, pady=10, sticky="nsew")
 
 app.grid_rowconfigure(0, weight=1)
 app.grid_rowconfigure(1, weight=1)
 app.grid_rowconfigure(2, weight=1)
 app.grid_columnconfigure(0, weight=1)
+
+entry_exponent.config(highlightthickness=2, highlightbackground="#4CAF50")
 
 app.mainloop()
 
