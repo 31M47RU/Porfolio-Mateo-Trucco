@@ -30,19 +30,19 @@ class ExponenteApp(MDApp):
         button_layout = GridLayout(cols=3, spacing=10, size_hint_y=None, height=Window.height * 0.6)
 
         for num in range(1, 10):
-            button = Button(text=str(num), on_press=lambda x, num=num: self.entryText(str(num)), background_color=(0.9, 0.9, 0.9, 1), size_hint=(None, None), size=(Window.width * 0.2, Window.height * 0.2))
+            button = Button(text=str(num), on_press=lambda x, num=num: self.entryText(str(num)), background_color=(0.9, 0.9, 0.9, 1))
             button_layout.add_widget(button)
 
         # Botón "0"
-        zero_button = Button(text="0", on_press=lambda x: self.entryText("0"), background_color=(0.9, 0.9, 0.9, 1), size_hint=(None, None), size=(Window.width * 0.2, Window.height * 0.2))
+        zero_button = Button(text="0", on_press=lambda x: self.entryText("0"), background_color=(0.9, 0.9, 0.9, 1))
         button_layout.add_widget(zero_button)
 
         # Botón "Calcular"
-        calcularBtn = Button(text="CALCULAR", on_press=self.calculate_result, background_color=(0, 0.7, 0, 1), color=(1, 1, 1, 1), size_hint=(None, None), size=(Window.width * 0.2, Window.height * 0.2))
+        calcularBtn = Button(text="CALCULAR", on_press=self.calculate_result, background_color=(0, 0.7, 0, 1), color=(1, 1, 1, 1))
         button_layout.add_widget(calcularBtn)
 
         # Botón "Borrar"
-        calcBtnDel = Button(text="<<<", on_press=self.clearText, background_color=(1, 0, 0, 1), color=(1, 1, 1, 1), size_hint=(None, None), size=(Window.width * 0.2, Window.height * 0.2))
+        calcBtnDel = Button(text="<<<", on_press=self.clearText, background_color=(1, 0, 0, 1), color=(1, 1, 1, 1))
         button_layout.add_widget(calcBtnDel)
 
         layout.add_widget(self.exponenteEnt)
