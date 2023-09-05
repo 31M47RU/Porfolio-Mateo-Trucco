@@ -19,8 +19,8 @@ class ExponenteApp(MDApp):
         )
 
         self.exponenteEnt = TextInput(
-            font_size=100,
-            multiline=False,
+            font_size=150,
+            multiline=True,
             readonly=True,
             halign="center",
             background_color=(1, 1, 1, 1),
@@ -81,3 +81,4 @@ class ExponenteApp(MDApp):
 
 if __name__ == '__main__':
     ExponenteApp().run()
+    
