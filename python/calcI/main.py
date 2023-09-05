@@ -19,7 +19,7 @@ class ExponenteApp(MDApp):
         )
 
         self.exponenteEnt = TextInput(
-            font_size=40,
+            font_size=100,
             multiline=False,
             readonly=True,
             halign="center",
