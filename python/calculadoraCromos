@@ -24,7 +24,7 @@ def calcular_ganancia():
 
 # Crear la ventana
 ventana = tk.Tk()
-ventana.title("Calculadora de Ganancias")
+ventana.title("Calculadora de Cromos")
 ventana.configure(bg="#121212")
 fuente = ("Arial", 14)
 
