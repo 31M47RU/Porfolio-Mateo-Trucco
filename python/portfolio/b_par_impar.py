@@ -34,10 +34,13 @@ while True:
     wait()
     if 1 <= num <= 1000:
         if num % 2 == 0:
+            alarm(1)
             write(f"\n¡{num} es un número par!\n")
             playAgain()
         else:
+            alarm(2)
             write(f"\n¡{num} es un número impar!\n")
             playAgain()
     else:
+        alarm(3)
         write("\nPor favor, introduce un número entre 1 y 1000.\n")
