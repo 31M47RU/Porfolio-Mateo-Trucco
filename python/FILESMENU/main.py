@@ -97,7 +97,7 @@ file_list = load_file_list()
 # Crear ventana principal
 root = tk.Tk()
 root.title("Gestor de Archivos Python")
-root.geometry("500x400")
+root.geometry("500x500")
 
 # Crear widgets
 listbox = tk.Listbox(root, width=50, height=20)

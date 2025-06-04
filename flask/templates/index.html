@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi App Flask</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a mi aplicación Flask</h1>
+    </header>
+
+    <main>
+        <p>Este es un ejemplo de cómo usar Flask con HTML, CSS y formularios.</p>
+
+        <form action="/" method="POST">
+            <label for="nombre">Tu nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <button type="submit">Enviar</button>
+        </form>
+
+        {% if nombre %}
+            <p>Hola, {{ nombre }}! Bienvenido a la app.</p>
+        {% endif %}
+    </main>
+</body>
+</html>
