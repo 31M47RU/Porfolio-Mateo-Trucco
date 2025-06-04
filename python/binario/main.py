@@ -35,19 +35,20 @@ def decimal_a_binario(n):
 
 def main():
     try:
-        entrada = input((Fore.CYAN if COLORAMA_AVAILABLE else "") + "Ingrese un número decimal (o 'salir' para terminar): " + (Style.RESET_ALL if COLORAMA_AVAILABLE else ""))
+        entrada = input((Fore.CYAN if COLORAMA_AVAILABLE else "") + "Ingrese un número decimal (o 'salir' para terminar): \n--- " + (Style.RESET_ALL if COLORAMA_AVAILABLE else ""))
         if entrada.lower() == "salir":
             print((Fore.YELLOW if COLORAMA_AVAILABLE else "") + "Saliendo del programa..." + (Style.RESET_ALL if COLORAMA_AVAILABLE else ""))
             slip(1)
             return False  # Devuelve False para indicar que hay que terminar el loop
         num = int(entrada)
         slip(0.5)
-        print((Fore.BLUE if COLORAMA_AVAILABLE else "") + "Procesando..." + (Style.RESET_ALL if COLORAMA_AVAILABLE else ""))
+        print((Fore.BLUE if COLORAMA_AVAILABLE else "") + "\nProcesando..." + (Style.RESET_ALL if COLORAMA_AVAILABLE else ""))
         barra_de_carga()
         binario = decimal_a_binario(num)
-        print((Fore.GREEN if COLORAMA_AVAILABLE else "") + f"El número {num} en binario es: {binario}" + (Style.RESET_ALL if COLORAMA_AVAILABLE else ""))
+        print((Fore.GREEN if COLORAMA_AVAILABLE else "") + f"El número {num} en binario es: \n |||   {binario}   |||\n" + (Style.RESET_ALL if COLORAMA_AVAILABLE else ""))
+        slip(0.5)
     except ValueError:
-        print((Fore.RED if COLORAMA_AVAILABLE else "") + "Error: Ingrese un número ENTERO válido." + (Style.RESET_ALL if COLORAMA_AVAILABLE else ""))
+        print((Fore.RED if COLORAMA_AVAILABLE else "") + "Error: Ingrese un número ENTERO válido.\n" + (Style.RESET_ALL if COLORAMA_AVAILABLE else ""))
         slip(0.5)
     return True  # Devuelve True para seguir el loop
 
