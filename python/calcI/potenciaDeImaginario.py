@@ -45,7 +45,7 @@ calcBtnDel = tk.Button(app, text="<<<", command=lambda:entryDel(), bg="pink", fg
 exponenteEnt.grid(row=0, column=0, padx=10, pady=5, columnspan=3, sticky="nsew")
 calcularBtn.grid(row=1, column=0, padx=10, pady=5, columnspan=3, sticky="nsew")
 
-calcBtn1.grid(row=2, column=0, padx=3, pady=3, sticky="n")
+calcBtn1.grid(row=2, column=0, padx=3, pady=3, sticky="nsew")
 calcBtn2.grid(row=2, column=1, padx=3, pady=3, sticky="nsew")
 calcBtn3.grid(row=2, column=2, padx=3, pady=3, sticky="nsew")
 

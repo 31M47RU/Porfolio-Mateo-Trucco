@@ -102,6 +102,7 @@ while running:
     for event in pygame.event.get():
         if len(extra_balls) >= 25000:
                 print(f"\n\n|||   LIMITE DE PITOS ALCANZADO   |||\nPitos: {len(extra_balls)}\n")
+                pygame.quit()
                 
 
     # Actualizar la pantalla principal

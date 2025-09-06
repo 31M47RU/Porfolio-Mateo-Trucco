@@ -4,10 +4,9 @@ def tablaBase(p1, p2, p3, p4, p5, p6):
 
 # Definir el alfabeto en braille
 abecedario = {
+    ' ': tablaBase(0, 0, 0, 0, 0, 0),
     'a': tablaBase(1, 0, 0, 0, 0, 0),
-    'b': tablaBase(1, 0,
-                   1, 0,
-                   0, 0),
+    'b': tablaBase(1, 0, 1, 0, 0, 0),
     'c': tablaBase(1, 1, 0, 0, 0, 0),
     'd': tablaBase(1, 1, 0, 1, 0, 0),
     'e': tablaBase(1, 0, 0, 1, 0, 0),
@@ -37,20 +36,21 @@ abecedario = {
 
 # Función para representar la letra en braille y retornarla como un string
 def braille(letra):
-    puntos = abecedario[letra]
     # Crear la representación en formato de 3x2 (columnas)
-    braille_visual = [
-        f"{'•' if puntos[0] else ' '} {'•' if puntos[3] else ' '}",
-        f"{'•' if puntos[1] else ' '} {'•' if puntos[4] else ' '}",
-        f"{'•' if puntos[2] else ' '} {'•' if puntos[5] else ' '}"
-    ]
+    if letra not in abecedario:
+        return "Letra no válida"
+    else:
+        puntos = abecedario[letra]
+        braille_visual = [
+            f"{'•' if puntos[0] else ' '} {'•' if puntos[3] else ' '}",
+            f"{'•' if puntos[1] else ' '} {'•' if puntos[4] else ' '}",
+            f"{'•' if puntos[2] else ' '} {'•' if puntos[5] else ' '}"
+        ]
     # Unir las líneas para pasarlo a `encuadrar`
     return '\n'.join(braille_visual)
 
+palabra = input("Ingrese una letra del abecedario (a-z, ñ): ").lower()
 # Usar `encuadrar` para cada letra en el abecedario
-# for letra in abecedario:
-    # print(f"Braille para '{letra}':")
-    # print(encuadrar(braille(letra)))
-    # print("\n")
-
-print(encuadrar(braille('b')))
+print(f"Braille para '{palabra}':")
+for letra in palabra:
+    print(encuadrar(braille(letra)))

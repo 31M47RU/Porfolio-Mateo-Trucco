@@ -44,7 +44,7 @@ def bfs_solver(initial_state):
     return None  # No solución encontrada
 
 # Estado inicial del usuario
-initial_state = ((2, 8, 3), (4, 5, 6), (7, 1, 0))
+initial_state = ((1, 7, 3), (4, 2, 0), (8, 6, 5))
 
 solution = bfs_solver(initial_state)
 if solution:
