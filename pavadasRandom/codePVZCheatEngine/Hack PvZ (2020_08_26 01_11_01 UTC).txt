@@ -1,0 +1,17 @@
+CARGA RAPIDA:
+
+	Primer codigo: 00491E4C
+	
+	Segundo codigo: inc [edi+24]	("assemble", cambiar 24 por 48)
+
+PLANTAS INMORTALES:
+
+	Primer codigo: 00540680
+	
+	Segundo codigo: add dword ptr [esi+40],fc
+
+EL QUE HAY QUE EDITAR:
+
+	LA PRIMERA VEZ: popcapgame11.exe-E8 1E150100    call   popcapgame1.exe+2B8FFD
+
+	LA SEGUNDA VEZ: popcapgame1-00 3B   add   [ebx],bh

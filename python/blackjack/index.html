@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blackjack</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        #game {
+            margin: 20px;
+        }
+
+        #dealer-hand, #player-hand {
+            display: inline-block;
+            vertical-align: top;
+            border: 1px solid #000;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .card {
+            width: 60px;
+            height: 90px;
+            background-image: url('card-faces.svg');
+            display: inline-block;
+            margin-right: 5px;
+            text-align: center;
+            line-height: 90px;
+        }
+
+        #buttons {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Blackjack</h1>
+    <div id="game">
+        <div id="dealer-hand">
+            <div class="card" style="background-position: 0 0;"></div>
+            <div class="card" style="background-position: -60px 0;"></div>
+        </div>
+        <div id="player-hand">
+            <div class="card" style="background-position: 0 -90px;"></div>
+            <div class="card" style="background-position: -60px -90px;"></div>
+        </div>
+        <div id="buttons">
+            <button id="deal-button">Repartir</button>
+            <button id="hit-button">Pedir Carta</button>
+            <button id="stand-button">Plantarse</button>
+        </div>
+    </div>
+
+    <script>
+      const suits = ["Hearts", "Diamonds", "Clubs", "Spades"];
+      const values = [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "J",
+        "Q",
+        "K",
+        "A",
+      ];
+      const deck = [];
+
+      let dealerHand = [];
+      let playerHand = [];
+
+      function createDeck() {
+        for (const suit of suits) {
+          for (const value of values) {
+            deck.push({ suit, value });
+          }
+        }
+      }
+
+      function shuffleDeck() {
+        for (let i = deck.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [deck[i], deck[j]] = [deck[j], deck[i]];
+        }
+      }
+
+      function deal() {
+        dealerHand = [getNextCard(), getNextCard()];
+        playerHand = [getNextCard(), getNextCard()];
+        updateUI();
+      }
+
+      function getNextCard() {
+        return deck.pop();
+      }
+
+      function updateUI() {
+        const dealerHandElement = document.getElementById("dealer-hand");
+        const playerHandElement = document.getElementById("player-hand");
+        dealerHandElement.innerHTML = dealerHand
+          .map((card) => createCardElement(card))
+          .join("");
+        playerHandElement.innerHTML = playerHand
+          .map((card) => createCardElement(card))
+          .join("");
+      }
+
+      function createCardElement(card) {
+        return `<div class="card">${card.value} of ${card.suit}</div>`;
+      }
+
+      document.getElementById("deal-button").addEventListener("click", deal);
+
+      createDeck();
+      shuffleDeck();
+    </script>
+  </body>
+</html>
